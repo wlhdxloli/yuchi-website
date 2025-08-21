@@ -1,15 +1,23 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono, Noto_Sans_Mono } from "next/font/google";
+import { Aoboshi_One, Dela_Gothic_One, Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
 
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
+const aoboshiOne = Aoboshi_One({
+  variable: "--font-aoboshi-one",
   subsets: ["latin"],
+  weight: "400",
 });
 
-const notoSansMonoJP = Noto_Sans_Mono({
-  variable: "--font-noto-mono-jp",
+const delaGothicOne = Dela_Gothic_One({
+  variable: "--font-dela-gothic",
   subsets: ["latin"],
+  weight: "400",
+});
+
+const notoSansJP = Noto_Sans_JP({
+  variable: "--font-noto-sans-jp",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -24,8 +32,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      </head>
       <body
-        className={`${jetbrainsMono.variable} ${notoSansMonoJP.variable} font-mono antialiased`}
+        className={`${aoboshiOne.variable} ${delaGothicOne.variable} ${notoSansJP.variable} antialiased`}
+        style={{ fontFamily: 'var(--font-noto-sans-jp), sans-serif' }}
       >
         {children}
       </body>

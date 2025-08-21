@@ -6,52 +6,52 @@ import MatrixBackground from '@/components/MatrixBackground'
 
 interface Project {
   id: string
-  name: string
+  name: { ja: string; en: string }
   description: { ja: string; en: string }
   technologies: string[]
-  category: string
+  category: { ja: string; en: string }
 }
 
 const services: Project[] = [
   {
     id: 'ai-layout',
-    name: 'AIレイアウトシステム',
+    name: { ja: 'AIレイアウトシステム', en: 'AI Layout System' },
     description: {
       ja: 'インテリジェントなデザインレイアウト自動選択プラットフォーム',
       en: 'Intelligent design layout auto-selection platform'
     },
     technologies: ['React', 'TypeScript', 'AI/ML', 'MongoDB'],
-    category: 'AI Platform'
+    category: { ja: 'AIプラットフォーム', en: 'AI Platform' }
   },
   {
     id: 'chatbot-solution',
-    name: 'エンタープライズチャットボット',
+    name: { ja: 'エンタープライズチャットボット', en: 'Enterprise Chatbot' },
     description: {
       ja: '高度なAI対話システム - 企業向けカスタマイズ可能なソリューション',
       en: 'Advanced AI conversation system - Customizable enterprise solutions'
     },
     technologies: ['Python', 'FastAPI', 'NLP', 'Redis'],
-    category: 'AI Chatbot'
+    category: { ja: 'AIチャットボット', en: 'AI Chatbot' }
   },
   {
     id: 'custom-llm',
-    name: 'カスタムLLMアプリケーション',
+    name: { ja: 'カスタムLLMアプリケーション', en: 'Custom LLM Application' },
     description: {
       ja: '企業専用の大規模言語モデルアプリケーション - セキュアで効率的',
       en: 'Custom large language model applications - Secure & efficient'
     },
     technologies: ['Next.js', 'FastAPI', 'CosmosDB', 'Firebase'],
-    category: 'Custom LLM'
+    category: { ja: 'カスタムLLM', en: 'Custom LLM' }
   },
   {
     id: 'cloud-platform',
-    name: 'AI/MLクラウドプラットフォーム',
+    name: { ja: 'AI/MLクラウドプラットフォーム', en: 'AI/ML Cloud Platform' },
     description: {
       ja: 'スケーラブルなクラウドインフラストラクチャ - Terraform自動化',
       en: 'Scalable cloud infrastructure - Terraform automation'
     },
     technologies: ['Terraform', 'AWS', 'Python', 'Docker'],
-    category: 'Cloud Platform'
+    category: { ja: 'クラウドプラットフォーム', en: 'Cloud Platform' }
   }
 ]
 
@@ -61,7 +61,7 @@ export default function Home() {
   const content = {
     ja: {
       title: '合同会社YUCHI',
-      subtitle: 'AI・LLM開発のプロフェッショナル',
+      subtitle: 'AI・LLM開発',
       description: '最新のAI技術を活用したカスタムアプリケーションの設計・開発を専門とする、次世代のソフトウェア開発会社です。',
       servicesTitle: 'サービス',
       services: [
@@ -72,6 +72,13 @@ export default function Home() {
       ],
       servicesPortfolioTitle: 'ポートフォリオ',
       contactTitle: 'お問い合わせ',
+      contactLabels: {
+        company: '販売業者:',
+        representative: '代表責任者:',
+        address: '所在地:',
+        email: 'メール:',
+        phone: '電話:'
+      },
       contactInfo: {
         company: '合同会社YUCHI',
         representative: '千賀　恒',
@@ -87,7 +94,7 @@ export default function Home() {
     },
     en: {
       title: 'YUCHI LLC',
-      subtitle: 'AI & LLM Development Professional',
+      subtitle: 'AI & LLM Development',
       description: 'Next-generation software development company specializing in designing and developing custom applications using cutting-edge AI technology.',
       servicesTitle: 'SERVICES',
       services: [
@@ -98,6 +105,13 @@ export default function Home() {
       ],
       servicesPortfolioTitle: 'PORTFOLIO',
       contactTitle: 'CONTACT INFO',
+      contactLabels: {
+        company: 'Company:',
+        representative: 'Representative:',
+        address: 'Address:',
+        email: 'Email:',
+        phone: 'Phone:'
+      },
       contactInfo: {
         company: 'Yuchi LLC',
         representative: 'Hisashi Senga',
@@ -149,7 +163,7 @@ export default function Home() {
             <div className="liquid-glass-element w-12 h-12 rounded-2xl flex items-center justify-center shadow-glass hover:shadow-glass-lg transition-all duration-500 hover:scale-110">
               <span className="text-white font-bold text-lg drop-shadow-lg">Y</span>
             </div>
-            <h1 className="text-2xl font-bold bg-gradient-to-r from-white via-blue-100 to-cyan-100 bg-clip-text text-transparent drop-shadow-lg">
+            <h1 className="text-2xl font-bold bg-gradient-to-r from-white via-blue-100 to-cyan-100 bg-clip-text text-transparent drop-shadow-lg" style={{ fontFamily: language === 'ja' ? 'var(--font-noto-sans-jp)' : 'var(--font-dela-gothic)', fontWeight: language === 'ja' ? '700' : '400' }}>
               {t.title}
             </h1>
           </div>
@@ -178,7 +192,7 @@ export default function Home() {
             <div className="liquid-glass-badge inline-flex items-center px-6 py-3 rounded-full text-green-300/90 text-lg font-medium shadow-glass">
               AI & LLM Development
             </div>
-            <h2 className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-white via-cyan-100 to-blue-200 bg-clip-text text-transparent leading-tight drop-shadow-2xl">
+            <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-white via-cyan-100 to-blue-200 bg-clip-text text-transparent leading-tight drop-shadow-2xl" style={{ fontFamily: language === 'ja' ? 'var(--font-noto-sans-jp)' : 'var(--font-dela-gothic)', fontWeight: language === 'ja' ? '700' : '400' }}>
               {t.subtitle}
             </h2>
             <p className="text-2xl text-white/80 max-w-4xl mx-auto leading-relaxed font-light">
@@ -200,7 +214,7 @@ export default function Home() {
 
         {/* Liquid Glass Services Section */}
         <section className="space-y-12">
-          <h3 className="text-5xl font-bold text-center text-white animate-slide-up">{t.servicesTitle}</h3>
+          <h3 className="text-5xl font-bold text-center text-white animate-slide-up" style={{ fontFamily: language === 'ja' ? 'var(--font-noto-sans-jp)' : 'var(--font-dela-gothic)', fontWeight: language === 'ja' ? '700' : '400' }}>{t.servicesTitle}</h3>
           <div className="grid md:grid-cols-2 gap-8">
             {t.services.map((service, index) => {
               const gradients = [
@@ -230,7 +244,7 @@ export default function Home() {
 
         {/* Liquid Glass Services Portfolio Section */}
         <section className="space-y-12">
-          <h3 className="text-5xl font-bold text-center text-white animate-slide-up">{t.servicesPortfolioTitle}</h3>
+          <h3 className="text-5xl font-bold text-center text-white animate-slide-up" style={{ fontFamily: language === 'ja' ? 'var(--font-noto-sans-jp)' : 'var(--font-dela-gothic)', fontWeight: language === 'ja' ? '700' : '400' }}>{t.servicesPortfolioTitle}</h3>
           <div className="grid md:grid-cols-2 gap-8">
             {services.map((project, index) => {
               const projectIcons = ['◢◣', '▲▼', '◆◇', '║═']
@@ -253,10 +267,10 @@ export default function Home() {
                         <div className="liquid-glass-element w-16 h-16 rounded-3xl flex items-center justify-center text-2xl group-hover:rotate-12 group-hover:matrix-glitch transition-transform duration-500 shadow-glass font-mono text-green-400">
                           {projectIcons[index]}
                         </div>
-                        <h3 className="text-2xl text-green-300 group-hover:text-cyan-200 transition-colors font-medium">{project.name}</h3>
+                        <h3 className="text-2xl text-green-300 group-hover:text-cyan-200 transition-colors font-medium">{project.name[language]}</h3>
                       </div>
                       <div className="liquid-glass-element text-sm text-cyan-300/80 group-hover:text-cyan-200 transition-colors rounded-xl px-3 py-1">
-                        {project.category}
+                        {project.category[language]}
                       </div>
                     </div>
                     <p className="text-white/70 leading-relaxed group-hover:text-white/90 transition-colors text-lg">
@@ -291,26 +305,26 @@ export default function Home() {
         {/* Liquid Glass Contact & Bank Section */}
         <section className="grid md:grid-cols-2 gap-16">
           <div className="space-y-8 animate-slide-up">
-            <h3 className="text-4xl font-bold text-green-300 flex items-center">
+            <h3 className="text-4xl font-bold text-green-300 flex items-center" style={{ fontFamily: language === 'ja' ? 'var(--font-noto-sans-jp)' : 'var(--font-dela-gothic)', fontWeight: language === 'ja' ? '700' : '400' }}>
               {t.contactTitle}
             </h3>
             <div className="liquid-glass-card rounded-3xl p-8 group transition-all duration-500">
               <div className="space-y-6">
                 <div className="space-y-4 text-lg">
                   <div>
-                    <strong className="text-green-300">販売業者:</strong>
+                    <strong className="text-green-300">{t.contactLabels.company}</strong>
                     <div className="text-white/90 mt-1">{t.contactInfo.company}</div>
                   </div>
                   <div>
-                    <strong className="text-green-300">代表責任者:</strong>
+                    <strong className="text-green-300">{t.contactLabels.representative}</strong>
                     <div className="text-white/90 mt-1">{t.contactInfo.representative}</div>
                   </div>
                   <div>
-                    <strong className="text-green-300">所在地:</strong>
+                    <strong className="text-green-300">{t.contactLabels.address}</strong>
                     <div className="text-white/90 mt-1 leading-relaxed">{t.contactInfo.address}</div>
                   </div>
                   <div>
-                    <strong className="text-green-300">メール:</strong>
+                    <strong className="text-green-300">{t.contactLabels.email}</strong>
                     <div className="mt-1">
                       <a href={`mailto:${t.contactInfo.email}`} className="text-cyan-300 hover:text-cyan-200 hover:underline transition-colors">
                         {t.contactInfo.email}
@@ -318,7 +332,7 @@ export default function Home() {
                     </div>
                   </div>
                   <div>
-                    <strong className="text-green-300">電話:</strong>
+                    <strong className="text-green-300">{t.contactLabels.phone}</strong>
                     <div className="text-white/90 mt-1">{t.contactInfo.phone}</div>
                   </div>
                   <div className="text-white/60 italic">
@@ -330,7 +344,7 @@ export default function Home() {
           </div>
 
           <div className="space-y-8 animate-slide-up" style={{animationDelay: '200ms'}}>
-            <h3 className="text-4xl font-bold text-green-300 flex items-center">
+            <h3 className="text-4xl font-bold text-green-300 flex items-center" style={{ fontFamily: language === 'ja' ? 'var(--font-noto-sans-jp)' : 'var(--font-dela-gothic)', fontWeight: language === 'ja' ? '700' : '400' }}>
               {t.bankTitle}
             </h3>
             <div className="liquid-glass-card rounded-3xl p-8 group transition-all duration-500">
