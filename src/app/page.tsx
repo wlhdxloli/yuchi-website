@@ -76,16 +76,13 @@ export default function Home() {
         company: '販売業者:',
         representative: '代表責任者:',
         address: '所在地:',
-        email: 'メール:',
-        phone: '電話:'
+        email: 'メール:'
       },
       contactInfo: {
         company: '合同会社YUCHI',
         representative: '千賀　恒',
-        email: 'info@yuchi.info',
-        phone: '042-445-0608',
-        address: '〒188-0012 東京都西東京市南町３丁目１６番３号',
-        phoneNote: '※お問い合わせはメールでお願いいたします'
+        email: 'info@yuchidata.com',
+        address: '〒188-0012 東京都西東京市南町３丁目１６番３号'
       },
       bankTitle: '提携銀行',
       partnerBanks: ['三菱UFJ銀行', 'PayPay銀行'],
@@ -109,16 +106,13 @@ export default function Home() {
         company: 'Company:',
         representative: 'Representative:',
         address: 'Address:',
-        email: 'Email:',
-        phone: 'Phone:'
+        email: 'Email:'
       },
       contactInfo: {
         company: 'Yuchi LLC',
-        representative: 'Hisashi Senga',
-        email: 'info@yuchi.info',
-        phone: '042-445-0608',
-        address: '3-16-3 Minami-cho, Nishitokyo City, Tokyo 188-0012, Japan',
-        phoneNote: '* Please contact us via email'
+        representative: 'Koh Senga',
+        email: 'info@yuchidata.com',
+        address: '3-16-3 Minami-cho, Nishitokyo City, Tokyo 188-0012, Japan'
       },
       bankTitle: 'PARTNER BANKS',
       partnerBanks: ['MUFG Bank', 'PayPay Bank'],
@@ -330,13 +324,6 @@ export default function Home() {
                         {t.contactInfo.email}
                       </a>
                     </div>
-                  </div>
-                  <div>
-                    <strong className="text-green-300">{t.contactLabels.phone}</strong>
-                    <div className="text-white/90 mt-1">{t.contactInfo.phone}</div>
-                  </div>
-                  <div className="text-white/60 italic">
-                    {t.contactInfo.phoneNote}
                   </div>
                 </div>
               </div>
