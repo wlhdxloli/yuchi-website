@@ -30,7 +30,7 @@ export default function LegalPage() {
         },
         contact: {
           title: '連絡先',
-          value: 'メール：info@yuchi.info\n電話：042-445-0608\n※お問い合わせはメールでお願いいたします',
+          value: 'メール：info@yuchidata.com',
           icon: '📞'
         },
         services: {
@@ -76,7 +76,7 @@ export default function LegalPage() {
         },
         representative: {
           title: 'Representative',
-          value: 'Hisashi Senga',
+          value: 'Koh Senga',
           icon: '👨‍💼'
         },
         address: {
@@ -86,7 +86,7 @@ export default function LegalPage() {
         },
         contact: {
           title: 'Contact Information',
-          value: 'Email: info@yuchi.info\nPhone: 042-445-0608\n* Please contact us via email',
+          value: 'Email: info@yuchidata.com',
           icon: '📞'
         },
         services: {
